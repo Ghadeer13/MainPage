@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iot/NavBar.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:iot/pic1.dart';
 void main() {
   runApp(const MaterialApp(
     home:Home(),
@@ -48,7 +50,7 @@ class Home extends StatelessWidget {
                 child: Card(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
                   child: InkWell(
-                    onTap: () => print("ciao"),
+
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,  // add this
                       children: <Widget>[
@@ -67,11 +69,16 @@ class Home extends StatelessWidget {
                               fit:BoxFit.cover,
 
 
+
                           ),
                         ),
                         ListTile(
                           title: Text('Lady with an Ermine By Leonardo da Vinci '),
                           subtitle: Text('NearBy'),
+                            onTap: () =>
+                                Navigator.of(context).pushReplacement(MaterialPageRoute
+                                  (builder: (context)=>const pic1()))
+
                         ),
               ],
                     ),
